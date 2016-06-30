@@ -63,6 +63,7 @@
   - [Аналоги любимых функций](http://www.intervolga.ru/blog/bitrix/d7-analogi-lyubimykh-funktsiy-v-1s-bitriks/) от Интерволги
   - [Application и Context](https://mrcappuccino.ru/blog/post/d7-application-and-context-objects) от Mr.Cappuccino
   - [Работа с файловой системой](https://mrcappuccino.ru/blog/post/work-with-file-system-bitrix-d7) от Mr.Cappuccino
+  - [Серверные переменные](http://blog.d-it.ru/dev/d7-object-server-work-correctly-with-server-variables/) от Антона Долганина
   - [Остальное](http://dev.1c-bitrix.ru/api_d7/) от Битрикса
 
 ## CSS
