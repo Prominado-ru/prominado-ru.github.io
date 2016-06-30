@@ -5,11 +5,9 @@
 ## Структура шаблона
 
 - В каталоге шаблона остаются только необходимые для Битрикс файлы - `header.php`, `footer.php`, `styles.css` и т.д.
-- `js` - свои скрипты и однофайловые библиотеки
-- `css` - свои стили и однофайловые библиотеки
 - `images` - изображения, спрайты, иконки
 - `fonts` - шрифты
-- остальные библиотеки и фреймворки располагаются в каталогах, названия которых совпадают с названием и версией библиотеки в папке `vendor`, при этом сохраняется внутренняя структура дистрибутива.
+- библиотеки и фреймворки располагаются в каталогах, названия которых совпадают с названием библиотеки в папке `vendor`, при этом сохраняется внутренняя структура дистрибутива.
 
 Пример:
 
@@ -26,19 +24,43 @@
 ├── images/
 |   ├── ..
 |
-├── assets/
-│   ├── js/
-|   |   ├── custom.js
-|   |   ├── jquery.dataAttributeEvents.js
+├── vendor/
+│   ├── fancybox/
+|   |   ├── jquery.fancybox.min.js
+|   |   ├── jquery.fancybox.css
 │   |
-│   ├── css/
+│   ├── bxslider/
 |   |   ├── ..
-│   |
-│   ├── images/
-|   |   ├── ..
-│   |
-│   └── bootstrap-3.0.0/
-│       ├── js/
-│       ├── css/
-  ...
+|
+├── script.js
+...
 ```
+
+## Структура служебных файлов
+/local/ajax/ - Ajax скрипты
+/local/cron/ - Cron скрипты
+
+## Битрикс
+- К проекту в phpStorm подключать библиотеку Битрикса (PhpStorm -> Preferences -> Languages & Frameworks -> PHP) и в Include path добавить папку, скачанную [отсюда](https://github.com/matiaspub/bxApiDocs)
+- Из комплексного компонента выносить всю дичь. То есть в шаблоне должно быть так:
+  - /local/templates/<название шаблона>/components/bitrix/news/<название шаблона компонента>/news.php
+  - /local/templates/<название шаблона>/components/bitrix/news.list/<название шаблона компонента>/template.php
+  - /local/templates/<название шаблона>/components/bitrix/news/<название шаблона компонента>/detail.php
+  - /local/templates/<название шаблона>/components/bitrix/news.detail/<название шаблона компонента>/template.php
+- Весь PHP код на странице стараться минимизировать. Если неизбежно, то обернуть всю логику в самописный компонент (пример компонента позже выложу) и на странице размещать именно компонент
+- init.php. Там вообще ничего не размещаем. в /local/php_interface/ создаем файлы CFunctions.php, CEvents.php и в них размещаем логику, в init же только подключение этих файлов. Надо помнить, что если разместить события в /local/php_interface/CEvents.php, то события будут работать только для сайта, которому принадлежит папка /local/, для остальных сайтов /local/ - своя
+
+
+## PHP
+- Все классы оборачивать своим namespace (лучше по названию проекта, а не \Prominado\)
+- Все большие скрипты (импорты, классы) - документировать. если не phpdoc, то хотя бы за что отвечает функция
+- Оформление кода - [PSR-1](http://svyatoslav.biz/misc/psr_translation/#_PSR-1), [PSR-2](http://svyatoslav.biz/misc/psr_translation/#_PSR-2), [Битрикс](https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=43&LESSON_ID=5759)
+- Скрипты и стили подключаются штатными функциями \Bitrix\Main\Page\Asset::getInstance()->add(Js/Css)
+- НЕЛЬЗЯ вставлять код вызова компонента внутрь файла template.php другого компонента
+
+## D7
+- Где это возможно, желательно начинать использовать D7
+  - [Аналоги любимых функций](http://www.intervolga.ru/blog/bitrix/d7-analogi-lyubimykh-funktsiy-v-1s-bitriks/) от Интерволги
+  - [Application и Context](https://mrcappuccino.ru/blog/post/d7-application-and-context-objects) от Mr.Cappuccino
+  - [Работа с файловой системой](https://mrcappuccino.ru/blog/post/work-with-file-system-bitrix-d7) от Mr.Cappuccino
+  - [Остальное](http://dev.1c-bitrix.ru/api_d7/) от Битрикса
