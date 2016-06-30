@@ -64,3 +64,6 @@
   - [Application и Context](https://mrcappuccino.ru/blog/post/d7-application-and-context-objects) от Mr.Cappuccino
   - [Работа с файловой системой](https://mrcappuccino.ru/blog/post/work-with-file-system-bitrix-d7) от Mr.Cappuccino
   - [Остальное](http://dev.1c-bitrix.ru/api_d7/) от Битрикса
+
+## CSS
+- [БЭМ](https://ru.bem.info/methodology/naming-convention/#Стиль-Гарри-Робертса). Если не все принципы, то хотя бы методологию наименования. 
