@@ -37,8 +37,8 @@
 ```
 
 ## Структура служебных файлов
-/local/ajax/ - Ajax скрипты
-/local/cron/ - Cron скрипты
+- /local/ajax/ - Ajax скрипты
+- /local/cron/ - Cron скрипты
 
 ## Битрикс
 - К проекту в phpStorm подключать библиотеку Битрикса (PhpStorm -> Preferences -> Languages & Frameworks -> PHP) и в Include path добавить папку, скачанную [отсюда](https://github.com/matiaspub/bxApiDocs)
