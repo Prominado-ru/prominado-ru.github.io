@@ -43,10 +43,22 @@
 ## Битрикс
 - К проекту в phpStorm подключать библиотеку Битрикса (PhpStorm -> Preferences -> Languages & Frameworks -> PHP) и в Include path добавить папку, скачанную [отсюда](https://github.com/matiaspub/bxApiDocs)
 - Из комплексного компонента выносить всю дичь. То есть в шаблоне должно быть так:
-  - /local/templates/<название шаблона>/components/bitrix/news/<название шаблона компонента>/news.php
-  - /local/templates/<название шаблона>/components/bitrix/news.list/<название шаблона компонента>/template.php
-  - /local/templates/<название шаблона>/components/bitrix/news/<название шаблона компонента>/detail.php
-  - /local/templates/<название шаблона>/components/bitrix/news.detail/<название шаблона компонента>/template.php
+```bash
+/local/templates/<название_шаблона>/bitrix/
+├── news/
+│   ├── <название шаблона>/
+|   |   ├── news.php
+|   |   ├── detail.php
+│
+├── news.list/
+│   ├── <название шаблона>/
+|   |   ├── template.php
+│
+├── news.detail/
+│   ├── <название шаблона>/
+|   |   ├── template.php
+...
+```
 - Весь PHP код на странице стараться минимизировать. Если неизбежно, то обернуть всю логику в самописный компонент ([пример](https://github.com/Prominado-ru/bitrix-component/)) и на странице размещать именно компонент
 - init.php. Там вообще ничего не размещаем. в /local/php_interface/ создаем файлы CFunctions.php, CEvents.php и в них размещаем логику, в init же только подключение этих файлов. Надо помнить, что если разместить события в /local/php_interface/CEvents.php, то события будут работать только для сайта, которому принадлежит папка /local/, для остальных сайтов /local/ - своя
 
