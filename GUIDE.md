@@ -79,4 +79,14 @@
   - [Остальное](http://dev.1c-bitrix.ru/api_d7/) от Битрикса
 
 ## CSS
-- [БЭМ](https://ru.bem.info/methodology/naming-convention/#Стиль-Гарри-Робертса). Если не все принципы, то хотя бы методологию наименования. 
+- [БЭМ](https://ru.bem.info/methodology/naming-convention/#Стиль-Гарри-Робертса). Если не все принципы, то хотя бы методологию наименования.
+
+
+## JS
+- Если на элемент надо повесить событие, то добавляем к нему префикс `js-`
+```javascript
+$(document).on("click", ".js-openajax", function()
+{
+    console.log("event");
+});
+```
