@@ -60,14 +60,14 @@
 ...
 ```
 - Весь PHP код на странице стараться минимизировать. Если неизбежно, то обернуть всю логику в самописный компонент ([пример](https://github.com/Prominado-ru/bitrix-component/)) и на странице размещать именно компонент
-- init.php. Там вообще ничего не размещаем. в /local/php_interface/ создаем файлы `CFunctions.php`, `CEvents.php` и в них размещаем логику, в init же только подключение этих файлов. Надо помнить, что если разместить события в `/local/php_interface/CEvents.php`, то события будут работать только для сайта, которому принадлежит папка `/local/`, для остальных сайтов `/local/` - своя
+- `init.php`. Там вообще ничего не размещаем. в `/local/php_interface/` создаем файлы `CFunctions.php`, `CEvents.php` и в них размещаем логику, в init же только подключение этих файлов. Надо помнить, что если разместить события в `/local/php_interface/CEvents.php`, то события будут работать только для сайта, которому принадлежит папка `/local/`, для остальных сайтов `/local/` - своя
 
 
 ## PHP
 - Все классы оборачивать своим namespace (лучше по названию проекта, а не `\Prominado\`)
 - Все большие скрипты (импорты, классы) - документировать. если не phpdoc, то хотя бы за что отвечает функция
 - Оформление кода - [PSR-1](http://svyatoslav.biz/misc/psr_translation/#_PSR-1), [PSR-2](http://svyatoslav.biz/misc/psr_translation/#_PSR-2), [Битрикс](https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=43&LESSON_ID=5759)
-- Скрипты и стили подключаются штатными функциями \Bitrix\Main\Page\Asset::getInstance()->add(Js/Css)
+- Скрипты и стили подключаются штатными функциями `\Bitrix\Main\Page\Asset::getInstance()->add(Js/Css)`
 - НЕЛЬЗЯ вставлять код вызова компонента внутрь файла `template.php` другого компонента
 
 ## D7
