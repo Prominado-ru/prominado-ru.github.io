@@ -90,3 +90,11 @@ $(document).on("click", ".js-openajax", function()
     console.log("event");
 });
 ```
+
+## Schema.org
+Используем наиболее популярные микроразметки:
+- [Organization](http://schema.org/Organization)
+- [Product](http://schema.org/Product)
+- [Question](http://schema.org/Question)
+- [ImageObject](http://schema.org/ImageObject)
+- [Rating](http://schema.org/Rating)
