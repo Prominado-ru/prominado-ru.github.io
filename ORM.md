@@ -125,3 +125,6 @@ $ord = \Prominado\Feedback\MessagesTable::getList([
 
 ## События
 Для каждой нашей сущности доступы [все 9 событий](D7-Events.md)
+
+## Ссылки
+[Битриксовская документация](https://dev.1c-bitrix.ru/learning/course/?COURSE_ID=43&CHAPTER_ID=05748)
