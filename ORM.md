@@ -123,3 +123,5 @@ $ord = \Prominado\Feedback\MessagesTable::getList([
         ])->fetchAll();
 ```
 
+## События
+Для каждой нашей сущности доступы [все 9 событий](D7-Events.md)
