@@ -38,7 +38,7 @@ class MessagesTable extends Main\Entity\DataManager
 	public static function getMap()
 	{
 	    // Описываем все поля нашей таблицы   
-		return array(
+		return [
             new Main\Entity\IntegerField("ID", [
                 "primary" => true,
                 "autocomplete" => true,
@@ -66,15 +66,15 @@ class MessagesTable extends Main\Entity\DataManager
             ]),
             new Main\Entity\BooleanField("PROCESSED", [
                 "title" => "Обработано",
-                "values" => Array("Y", "N"),
+                "values" => ["Y", "N"],
                 "default" => "N"
             ]),
-        );
+        ];
 	}
 	
 	
 	// Если нужно переопределить логику стандартного метода
-	public static function add(array $data)
+	public static function add($data)
     {        
         return parent::add($data);
     }
