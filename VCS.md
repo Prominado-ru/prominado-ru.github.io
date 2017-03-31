@@ -74,7 +74,8 @@ git checkout master
 
 дальше вешаем на крон каждую минуту
 ````bash
-cd ~/www/host.ru && git pull
+cd ~/www/host.ru/ && git fetch
+cd ~/www/host.ru/ && git reset --hard origin/master
 ````
 
 Теперь, если какие то изменения попадают в нашу мастер ветку, то они автоматически попадают на сайт :)
