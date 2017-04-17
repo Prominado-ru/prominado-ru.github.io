@@ -16,7 +16,7 @@
 ├── header.php
 ├── footer.php
 ├── styles.css
-├── templaye_styles.css
+├── template_styles.css
 │
 ├── components/
 |   ├── ..
