@@ -24,7 +24,7 @@
 ├── images/
 |   ├── ..
 |
-├── vendor/
+├── libs/
 │   ├── fancybox/
 |   |   ├── jquery.fancybox.min.js
 |   |   ├── jquery.fancybox.css
@@ -36,9 +36,19 @@
 ...
 ```
 
+## Композер
+Если к проекту подключается - [composer](getcomposer.org), то он инициируется в ````/local/````, а в ````init.php```` прописываем
+````php
+<?
+require_once($_SERVER['DOCUMENT_ROOT'] . "/local/vendor/autoload.php");
+````
+
 ## Структура служебных файлов
 - /local/ajax/ - Ajax скрипты
 - /local/cron/ - Cron скрипты
+- /local/includes/ - Включаемые области
+
+В корне проекта **только** проект, ````bitrix````, ````local```` и ````upload````
 
 ## Битрикс
 - К проекту в phpStorm подключать библиотеку Битрикса (PhpStorm -> Preferences -> Languages & Frameworks -> PHP) и в Include path добавить папку, скачанную [отсюда](https://github.com/matiaspub/bxApiDocs)
