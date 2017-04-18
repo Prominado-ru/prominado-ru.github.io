@@ -36,12 +36,26 @@
 ...
 ```
 
+## Bower
+Для подключения front-end библиотек к проекту используем [bower](bower.io)
+Bower инициируется в ````local````, а библиотеки подключаются стандартным
+````php
+<?
+$head = \Bitrix\Main\Page\Asset::getInstance();
+$head->addJs("/local/bower_components/fancybox/dist/jquery.fancybox.min.js");
+$head->addCss("/local/bower_components/fancybox/dist/jquery.fancybox.min.css");
+````
+
 ## Композер
 Если к проекту подключается - [composer](getcomposer.org), то он инициируется в ````/local/````, а в ````init.php```` прописываем
 ````php
 <?
 require_once($_SERVER['DOCUMENT_ROOT'] . "/local/vendor/autoload.php");
 ````
+
+## Версионный контроль
+Служебные папки ````vendor```` и ````bower_components```` **обязательно** добавляются в ````.gitignore````
+При использовании composer или bower в git должны быть ````composer.lock````, ````composer.json```` и ````bower.json````
 
 ## Структура служебных файлов
 - /local/ajax/ - Ajax скрипты
