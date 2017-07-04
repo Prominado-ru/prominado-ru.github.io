@@ -22,7 +22,7 @@
         В примере REAL_STATUS фильтруется по 3 значениям (новая, в ожидании, в процессе исполнения). Фильтр можно настроить по своему усмотрению - [как сделать](https://dev.1c-bitrix.ru/rest_help/tasks/task/item/list.php)
         * В Single Task URL: 
         ````
-        {serverUrl}/rest/22/rown99crz1aisgyf/task.item.getdata/?TASKID={id}
+        {serverUrl}/rest/<Ваш_ID>/<Ваш_код_вебхука>/task.item.getdata/?TASKID={id}
         ````
         
         **В обоих запросах выбираем метод POST**
