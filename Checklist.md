@@ -63,5 +63,4 @@
 - Заголовки и свойства страниц
 - Счетчики
 - Редирект www-nowww/nowww-www
-- [Humans.txt](http://humanstxt.org/)
 - Микроразметка schema.org
