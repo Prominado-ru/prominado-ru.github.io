@@ -47,10 +47,10 @@ $head->addCss("/local/bower_components/fancybox/dist/jquery.fancybox.min.css");
 ````
 
 ## Композер
-Если к проекту подключается - [composer](getcomposer.org), то он инициируется в ````/local/````, а в ````init.php```` прописываем
+Если к проекту подключается - [composer](getcomposer.org), то он инициируется в корне проекта, а в ````init.php```` прописываем
 ````php
 <?
-require_once($_SERVER['DOCUMENT_ROOT'] . "/local/vendor/autoload.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php");
 ````
 
 ## Версионный контроль
@@ -62,7 +62,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/local/vendor/autoload.php");
 - /local/cron/ - Cron скрипты
 - /local/includes/ - Включаемые области
 
-В корне проекта **только** проект, ````bitrix````, ````local```` и ````upload````
+В корне проекта **только** проект, ````bitrix````, ````vendor````, ````local```` и ````upload````
 
 ## Битрикс
 - К проекту в phpStorm подключать библиотеку Битрикса (PhpStorm -> Preferences -> Languages & Frameworks -> PHP) и в Include path добавить папку, скачанную [отсюда](https://github.com/matiaspub/bxApiDocs)
@@ -106,9 +106,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/local/vendor/autoload.php");
 
 
 ## JS
-- Если на элемент надо повесить событие, то добавляем к нему префикс `js-`
+- Если на элемент надо повесить событие, то добавляем к нему параметр `data-js-<event_name>`
 ```javascript
-$(document).on("click", ".js-openajax", function()
+$(document).on("click", "[data-js-openajax]", function()
 {
     console.log("event");
 });
