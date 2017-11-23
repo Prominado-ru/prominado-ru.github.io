@@ -8,6 +8,10 @@
 * [Шаблоны проектирования простым языком. Часть третья. Поведенческие шаблоны](https://tproger.ru/translations/design-patterns-simple-words-3)
 * [Чистый код на PHP](https://habrahabr.ru/company/mailru/blog/336788/)
 
+## MySQL
+
+* [Информационный ресурс о SQL](http://2sql.ru/)
+
 ## Блоги разработчиков
 
 * [Антон Долганин](http://blog.d-it.ru/)
