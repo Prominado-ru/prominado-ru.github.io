@@ -10,13 +10,34 @@
 
 ## Общие правила
 - Не используйте двойные кавычки
-
 ````php
 // bad
 $data["user"] = [];
 
 // good
 $data['user'] = [];
+````
+
+- Не используйте магические цифры
+````php
+// bad
+CIBlockElement::GetList([], ['IBLOCK_ID' => 5], false, false, ['IBLOCK_ID', 'ID']);
+
+// good
+$catalog_iblock_id = 5;
+
+CIBlockElement::GetList([], ['IBLOCK_ID' => $catalog_iblock_id], false, false, ['IBLOCK_ID', 'ID']);
+````
+
+Предпочтительнее использовать константы или классы:
+
+````php
+class Settings 
+{
+    const CATALOG_IBLOCK_ID = 5;
+}
+
+CIBlockElement::GetList([], ['IBLOCK_ID' => Settings::CATALOG_IBLOCK_ID], false, false, ['IBLOCK_ID', 'ID']);
 ````
 
 Чтобы упростить жизнь себе и другим, используйте автоформатирование кода в PhpStorm:
