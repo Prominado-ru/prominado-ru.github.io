@@ -32,42 +32,42 @@ class MessagesTable extends Main\Entity\DataManager
 	public static function getTableName()
 	{
 	    // Название нашей таблицы в базе
-		return "b_prominado_messages";
+		return 'b_prominado_messages';
 	}
 	
 	public static function getMap()
 	{
 	    // Описываем все поля нашей таблицы   
 		return [
-            new Main\Entity\IntegerField("ID", [
-                "primary" => true,
-                "autocomplete" => true,
-                "title" => "Идентификатор",
+            new Main\Entity\IntegerField('ID', [
+                'primary' => true,
+                'autocomplete' => true,
+                'title' => 'Идентификатор',
             ]),
-            new Main\Entity\DatetimeField("TIMESTAMP_X", [
-                "default_value" => new Main\Type\DateTime(),
-                "title" => "Дата отправки",
+            new Main\Entity\DatetimeField('TIMESTAMP_X', [
+                'default_value' => new Main\Type\DateTime(),
+                'title' => 'Дата изменения',
             ]),
-            new Main\Entity\IntegerField("USER_ID", [
-                "title" => "Идентификатор пользователя",
+            new Main\Entity\IntegerField('USER_ID', [
+                'title' => 'Идентификатор пользователя',
             ]),
             
             // Реализуем связку с сущностью User
             new Main\Entity\ReferenceField(
-                "USER",
-                "\Bitrix\Main\User",
-                ["=this.USER_ID" => "ref.ID"],
-                ["join_type" => "INNER"]
+                'USER',
+                '\\Bitrix\\Main\\User',
+                ['=this.USER_ID' => 'ref.ID'],
+                ['join_type' => 'INNER']
             ),
             
-            new Main\Entity\StringField("MESSAGE", [
-                "title" => "Сообщение",
-                "required" => true
+            new Main\Entity\StringField('MESSAGE', [
+                'title' => 'Сообщение',
+                'required' => true
             ]),
-            new Main\Entity\BooleanField("PROCESSED", [
-                "title" => "Обработано",
-                "values" => ["Y", "N"],
-                "default" => "N"
+            new Main\Entity\BooleanField('PROCESSED', [
+                'title' => 'Обработано',
+                'values' => ['Y', 'N'],
+                'default' => 'N'
             ]),
         ];
 	}
@@ -85,19 +85,15 @@ class MessagesTable extends Main\Entity\DataManager
 
 ```php
 $res = \Prominado\Feedback\MessagesTable::add([
-    "USER_ID" => 1,
-    "MESSAGE" => "Мое первое сообщение"
+    'USER_ID' => 1,
+    'MESSAGE' => 'Мое первое сообщение'
 ]);
 
-if ($res->isSuccess())
-{
-    echo "Добавлено: "  . $res->getId();
-}
-else
-{
+if ($res->isSuccess()) {
+    echo 'Добавлено: '  . $res->getId();
+} else {
     print_r($res->getErrorMessages());
 }
-
 
 // изменение и удаление
 \Prominado\Feedback\MessagesTable::update($id, []);
@@ -105,21 +101,20 @@ else
 
 
 // выборка
-$ord = \Prominado\Feedback\MessagesTable::getList(["filter" => [
-            ">=TIMESTAMP_X" => DateTime::createFromUserTime("d.m.Y 10:00:00"),
-            "USER_ID" => 1
+$ord = \Prominado\Feedback\MessagesTable::getList(['filter' => [
+            '>=TIMESTAMP_X' => DateTime::createFromUserTime('d.m.Y 10:00:00'),
+            'USER_ID' => 1
         ]])->fetchAll();
 
 // Но нам мало получить ID пользователя. Мы еще хотим его имя и электронную почту
-
 $ord = \Prominado\Feedback\MessagesTable::getList([
-            "filter" => [
-                ">=TIMESTAMP_X" => DateTime::createFromUserTime("d.m.Y 10:00:00"),
+            'filter' => [
+                '>=TIMESTAMP_X' => DateTime::createFromUserTime('d.m.Y 10:00:00'),
                 "USER_ID" => 1
             ],
             // Помните ReferenceField? Вот это оно
             // Мы запрашиваем поля NAME и EMAIL из Сущности \Bitrix\Main\User у которой ID равен нашему USER_ID
-            "select" => ["USER.NAME", "USER.EMAIL"]
+            'select' => ['USER.NAME', 'USER.EMAIL']
         ])->fetchAll();
 ```
 
@@ -128,3 +123,4 @@ $ord = \Prominado\Feedback\MessagesTable::getList([
 
 ## Ссылки
 [Битриксовская документация](https://dev.1c-bitrix.ru/learning/course/?COURSE_ID=43&CHAPTER_ID=05748)
+[Обновления в ORM](https://dev.1c-bitrix.ru/community/blogs/orm/orm-updates.php)

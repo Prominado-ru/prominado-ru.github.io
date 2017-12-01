@@ -16,14 +16,14 @@ $_SERVER['DOCUMENT_ROOT'] = '/home/bitrix/ext_www/site.ru';
 define('NO_KEEP_STATISTIC', true);
 define('NOT_CHECK_PERMISSIONS', true);
 
-require($_SERVER["DOCUMENT_ROOT"] . '/bitrix/modules/main/include/prolog_before.php');
-require($_SERVER["DOCUMENT_ROOT"] . '/bitrix/modules/main/classes/general/csv_data.php');
+require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/main/include/prolog_before.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/main/classes/general/csv_data.php';
 
 set_time_limit(0);
 
 // тут код
 
-require($_SERVER["DOCUMENT_ROOT"] . '/bitrix/modules/main/include/epilog_after.php');
+require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/main/include/epilog_after.php';
 ````
 
 в частности, у reg.ru при вызове /usr/bin/php запускается php 5.3, поэтому в начале мы переопределили интерпретатор php ([пути до других версий](https://www.reg.ru/support/hosting-i-servery/hosting-sajtov/yazyki-programmirovaniya-i-skripty/kak-smenit-versiyu-php))

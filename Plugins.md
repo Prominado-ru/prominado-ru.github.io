@@ -9,4 +9,4 @@
 
 ## CSS
 
-- [Bulma](http://bulma.io/) - Секси-css-фреймворк © Аналог бутстрапа
+- [Bulma](http://bulma.io/) - Секси-css-фреймворк ©

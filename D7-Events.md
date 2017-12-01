@@ -30,10 +30,10 @@ OnAfterDelete (primary)
 
 ```php
 \Bitrix\Main\EventManager::getInstance()->addEventHandler(
-    "iblock",
-    "\Bitrix\Iblock\Element::OnBeforeAdd",
+    'iblock',
+    '\\Bitrix\\Iblock\\Element::OnBeforeAdd',
     function (\Bitrix\Main\Event $e) {
-        echo '<pre style="color: red;">';print_r($e->getParameters());echo '</pre>';
+        echo '<pre style="color: red;">', print_r($e->getParameters(), true), '</pre>';
     }
 );
 ```
