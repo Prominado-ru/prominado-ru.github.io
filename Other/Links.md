@@ -36,4 +36,4 @@
 * [ORM](https://dev.1c-bitrix.ru/learning/course/?COURSE_ID=43&CHAPTER_ID=05748) – Битрикс
 * [Обновления в ORM](https://dev.1c-bitrix.ru/community/blogs/orm/orm-updates.php) – Битрикс
 * [Делаем собственный sale.order.ajax на d7](https://dev.1c-bitrix.ru/community/webdev/user/40761/blog/25845/) – Шубин Александр
-* [Работа с гридами](Grid.md) – Prominado
+* [Работа с гридами](../Bitrix/Grid.md) – Prominado

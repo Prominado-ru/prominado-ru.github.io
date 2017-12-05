@@ -88,4 +88,4 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 Служебная папка ````vendor```` **обязательно** добавляются в ````.gitignore````
 При использовании composer в git должны быть ````composer.lock```` и ````composer.json````
 
-## [Статьи](../Links.md#Битрикс)
+## [Статьи](../Other/Links.md#Битрикс)

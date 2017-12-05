@@ -5,18 +5,21 @@
 Правила оформления кода, принятые в Prominado, рекомендации и просто советы
 
 ## 1С-Битрикс
-* [Консольные скрипты в Битриксе](CLI.md)
-* [События на d7](D7-Events.md)
-* [Фильтры и гриды](Grid.md)
-* [ORM](ORM.md)
+* [Консольные скрипты в Битриксе](Bitrix/CLI.md)
+* [События на d7](Bitrix/D7-Events.md)
+* [Фильтры и гриды](Bitrix/Grid.md)
+* [ORM](Bitrix/ORM.md)
+
+## SEO и сопутствующие вещи
+* [Яндекс Метрика](Seo/YandexMetrika.md)
 
 ## Git
-* [Работа с системой контроля версий](VCS.md)
-* [Настройка Git && PhpStorm && Bitrix24](Git-PhpStorm.md)
+* [Работа с системой контроля версий](Git/VCS.md)
+* [Настройка Git && PhpStorm && Bitrix24](Git/Git-PhpStorm.md)
 
 ## Other
-* [Подборка полезных статей](Links.md)
-* [Подборка часто используемых плагинов](Plugins.md)
+* [Подборка полезных статей](Other/Links.md)
+* [Подборка часто используемых плагинов](Other/Plugins.md)
 
 ## Новичкам
-* [Общая информация](Newcomers.md)
+* [Общая информация](Other/Newcomers.md)
