@@ -1,4 +1,4 @@
-# Prominado Style Guides (jQuery)
+# Prominado Guides: jQuery
 
 ## Именование переменных
 

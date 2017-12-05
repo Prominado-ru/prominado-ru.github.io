@@ -1,4 +1,4 @@
-# Prominado Style Guides (1С-Битрикс)
+# Prominado Guides: 1С-Битрикс
 
 ## Общие рекомендации
 - К проекту в phpStorm подключать библиотеку Битрикса (PhpStorm -> Preferences -> Languages & Frameworks -> PHP) и в Include path добавить папку, скачанную [отсюда](https://github.com/matiaspub/bxApiDocs) (Репозиторий обновляется редко, скоро сделаю свой)
@@ -76,22 +76,6 @@ CJSCore::Init(['fancybox', 'bxslider']);
 
 ## D7
 - Где это возможно, желательно начинать использовать `D7`
-- [Аналоги любимых функций](http://www.intervolga.ru/blog/bitrix/d7-analogi-lyubimykh-funktsiy-v-1s-bitriks/) от Интерволги
-- [Application и Context](https://mrcappuccino.ru/blog/post/d7-application-and-context-objects) от Mr.Cappuccino
-- [Работа с файловой системой](https://mrcappuccino.ru/blog/post/work-with-file-system-bitrix-d7) от Mr.Cappuccino
-- [Использование геолокации](https://mrcappuccino.ru/blog/post/d7-geolocation) от Mr.Cappuccino
-- [Ограничения в службах доставки](https://mrcappuccino.ru/blog/post/delivery-restrictions-bitrix-d7) от Mr.Cappuccino
-- [Кэширование данных](https://mrcappuccino.ru/blog/post/bitrix-d7-data-cache) от Mr.Cappuccino
-- [Возможности отладки](https://mrcappuccino.ru/blog/post/bitrix-d7-debug) от Mr.Cappuccino
-- [Кастомизация формы заказа](https://mrcappuccino.ru/blog/post/order-form-customization-bitrix-d7) от Mr.Cappuccino
-- [HTTP-Клиент](https://mrcappuccino.ru/blog/post/work-with-http-bitrix-d7) от Mr.Cappuccino
-- [Работа с заказом](https://mrcappuccino.ru/blog/post/work-with-order-bitrix-d7) от Mr.Cappuccino
-- [Работа с корзиной](https://mrcappuccino.ru/blog/post/work-with-basket-bitrix-d7) от Mr.Cappuccino
-- [Обработчик службы доставки](https://mrcappuccino.ru/blog/post/delivery-handler-for-new-bitrix-sale-module) от Mr.Cappuccino
-- [Разное](https://github.com/SidiGi/bitrix-info/wiki) от SidiGi
-- [Остальное](http://dev.1c-bitrix.ru/api_d7/) от Битрикса
-- [ORM](https://dev.1c-bitrix.ru/learning/course/?COURSE_ID=43&CHAPTER_ID=05748) от Битрикса
-- [Обновления в ORM](https://dev.1c-bitrix.ru/community/blogs/orm/orm-updates.php) от Битрикса
 
 ## Композер
 Если к проекту подключается - [Composer](getcomposer.org), то он инициируется в корне проекта, а в ````init.php```` прописываем
@@ -103,3 +87,5 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 ## Версионный контроль
 Служебная папка ````vendor```` **обязательно** добавляются в ````.gitignore````
 При использовании composer в git должны быть ````composer.lock```` и ````composer.json````
+
+## [Статьи](../Links.md#Битрикс)

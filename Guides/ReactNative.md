@@ -1,2 +1,2 @@
-# Prominado Style Guides (React Native)
+# Prominado Guides: React Native
 

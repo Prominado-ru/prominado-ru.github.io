@@ -1,4 +1,4 @@
-# Prominado Style Guides (HTML и CSS)
+# Prominado Guides: HTML и CSS
 
 ## HTML
 ### Общие правила

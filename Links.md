@@ -17,3 +17,23 @@
 * [Антон Долганин](http://blog.d-it.ru/)
 * [Михаил Журов](http://zhurov.me/)
 * [Никита Самохвалов](http://samokhvalov.info/blog/)
+
+## Битрикс
+* [Аналоги любимых функций](http://www.intervolga.ru/blog/bitrix/d7-analogi-lyubimykh-funktsiy-v-1s-bitriks/) – Интерволга
+* [Application и Context](https://mrcappuccino.ru/blog/post/d7-application-and-context-objects) – Mr.Cappuccino
+* [Работа с файловой системой](https://mrcappuccino.ru/blog/post/work-with-file-system-bitrix-d7) – Mr.Cappuccino
+* [Использование геолокации](https://mrcappuccino.ru/blog/post/d7-geolocation) – Mr.Cappuccino
+* [Ограничения в службах доставки](https://mrcappuccino.ru/blog/post/delivery-restrictions-bitrix-d7) – Mr.Cappuccino
+* [Кэширование данных](https://mrcappuccino.ru/blog/post/bitrix-d7-data-cache) – Mr.Cappuccino
+* [Возможности отладки](https://mrcappuccino.ru/blog/post/bitrix-d7-debug) – Mr.Cappuccino
+* [Кастомизация формы заказа](https://mrcappuccino.ru/blog/post/order-form-customization-bitrix-d7) – Mr.Cappuccino
+* [HTTP-Клиент](https://mrcappuccino.ru/blog/post/work-with-http-bitrix-d7) – Mr.Cappuccino
+* [Работа с заказом](https://mrcappuccino.ru/blog/post/work-with-order-bitrix-d7) – Mr.Cappuccino
+* [Работа с корзиной](https://mrcappuccino.ru/blog/post/work-with-basket-bitrix-d7) – Mr.Cappuccino
+* [Обработчик службы доставки](https://mrcappuccino.ru/blog/post/delivery-handler-for-new-bitrix-sale-module) – Mr.Cappuccino
+* [Разное](https://github.com/SidiGi/bitrix-info/wiki) – Микулич Евгений
+* [Остальное](http://dev.1c-bitrix.ru/api_d7/) – Битрикс
+* [ORM](https://dev.1c-bitrix.ru/learning/course/?COURSE_ID=43&CHAPTER_ID=05748) – Битрикс
+* [Обновления в ORM](https://dev.1c-bitrix.ru/community/blogs/orm/orm-updates.php) – Битрикс
+* [Делаем собственный sale.order.ajax на d7](https://dev.1c-bitrix.ru/community/webdev/user/40761/blog/25845/) – Шубин Александр
+* [Работа с гридами](Grid.md) – Prominado

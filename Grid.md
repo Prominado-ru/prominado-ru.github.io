@@ -26,13 +26,7 @@ $APPLICATION->IncludeComponent('bitrix:main.ui.filter', '', [
     'GRID_ID' => 'report_list',
     'FILTER' => [
         ['id' => 'DATE', 'name' => 'Дата', 'type' => 'date'],
-        [
-            'id'     => 'IS_SPEND',
-            'name'   => 'Тип операции',
-            'type'   => 'list',
-            'items'  => ['' => 'Любой', 'P' => 'Поступление', 'M' => 'Списание'],
-            'params' => ['multiple' => 'Y']
-        ],
+        ['id' => 'IS_SPEND', 'name' => 'Тип операции', 'type' => 'list', 'items'  => ['' => 'Любой', 'P' => 'Поступление', 'M' => 'Списание'], 'params' => ['multiple' => 'Y']],
         ['id' => 'AMOUNT', 'name' => 'Сумма', 'type' => 'number'],
         ['id' => 'PAYER_INN', 'name' => 'ИНН Плательщика', 'type' => 'number'],
         ['id' => 'PAYER_NAME', 'name' => 'Плательщик'],

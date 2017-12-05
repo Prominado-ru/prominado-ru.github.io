@@ -1,4 +1,4 @@
-# Prominado Style Guides (JavaScript)
+# Prominado Guides: JavaScript
 
 В качестве единного стандарта оформления JavaScript кода принят [Airbnb JavaScript Style Guide()](https://github.com/airbnb/javascript)
 
