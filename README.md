@@ -11,6 +11,7 @@
 * [ORM](Bitrix/ORM.md)
 
 ## React Native
+* [Установка и настройка](React/Setup.md)
 * [Библиотеки](React/Libraries.md)
 
 ## SEO и сопутствующие вещи

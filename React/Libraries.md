@@ -1,5 +1,6 @@
 ## React Native Библиотеки
 
+* [Expo SDK](https://docs.expo.io/versions/latest/sdk/) - Много разных кроссплатформенных полезностей
 * [react-native-datepicker](https://github.com/xgfe/react-native-datepicker) – Datepicker (iOS / Android)
 * [react-native-dropdownalert](https://github.com/testshallpass/react-native-dropdownalert) – Вывод сообщений в статусбаре (iOS / Android)
 * [react-native-elements](https://github.com/react-native-training/react-native-elements) – Подборка полезных компонентов (списки, иконки, итд) (iOS / Android)
