@@ -41,4 +41,4 @@ function addSetEntry(set, value) {
 
 ## [Schema.org](Schema.md)
 
-## [~~React Native~~](ReactNative.md)
+## [React Native](ReactNative.md)
