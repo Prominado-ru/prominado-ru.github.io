@@ -1,7 +1,7 @@
 ## Prominado Docs
 
 ## Гайдлайны
-* [Что это такие и зачем они нужны](Guides/Common.md)
+* [Что это такое и зачем они нужны](Guides/Common.md)
 * [PHP](Guides/PHP.md)
 * [1С-Битрикс](Guides/Bitrix.md)
 * [HTML и CSS](Guides/Frontend.md)

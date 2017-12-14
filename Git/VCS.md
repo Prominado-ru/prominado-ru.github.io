@@ -9,7 +9,7 @@
 1. Создаем Git-репозиторий
 2. Открываем проект в PhpStorm
 Меню VCS -> Integrate VCS
-VCS -> Git -> Remotes Добавляем удаленный репозиторий ссылкой вида https://username@bitbucket.org/prominado/project_name.ru.git
+VCS -> Git -> Remotes Добавляем удаленный репозиторий ссылкой вида https://gitlab.com/prominado/project_name.git
 Содаем .gitignore с содержимым
 ````bash
 .idea
@@ -64,7 +64,7 @@ cat ~/.ssh/id_rsa.pub
 ````bash
 cd ~/www/host.ru
 git init
-git remote add origin git@bitbucket.org/prominado/project_name.ru.git
+git remote add origin git@gitlab.com:prominado/project_name.ru.git
 ````
 
 получаем изменения
