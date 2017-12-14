@@ -10,6 +10,9 @@
 
 ## Общие правила
 - Не используйте двойные кавычки
+
+>Когда сервер обрабатывает код, он проверяет все содержимое двойных кавычек на наличие переменных, констант и другое. Это занимает время. А то, что находится между одинарными кавычками сервер обрабатывает как готовый текст и ему все равно, что там находится.
+
 ````php
 // bad
 $data["user"] = [];
@@ -26,7 +29,7 @@ CIBlockElement::GetList([], ['IBLOCK_ID' => 5], false, false, ['IBLOCK_ID', 'ID'
 // good
 $catalog_iblock_id = 5;
 
-CIBlockElement::GetList([], ['IBLOCK_ID' => $catalog_iblock_id], false, false, ['IBLOCK_ID', 'ID']);
+CIBlockElement::GetList([], ['IBLOCK_ID' => $catalogIblockId], false, false, ['IBLOCK_ID', 'ID']);
 ````
 
 Предпочтительнее использовать константы или классы:

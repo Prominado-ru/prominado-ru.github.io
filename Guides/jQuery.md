@@ -66,20 +66,17 @@ $(document).on('click', '[data-show-modal]', function() {});
 // bad
 // on click handler + callback function
 $(document).on('click', '[data-change-color-to-green]', function() {
-  $(this).css('color', 'green');
+  $(this).css('color', '#0f0');
 });
 ````
 
 Повторное использование функции стало невозможным. Сравните:
 
 ````javascript
-
-// bad
-// on click handler + callback function
 $(document).on('click', '[data-change-color-to-green]', changeColorToGreen);
 
 function changeColorToGreen() {
-    $(this).css('color', 'green');   
+    $(this).css('color', '#0f0');   
 }
 ````
 
@@ -100,12 +97,12 @@ function loadJSON(event) {
 
 // callback for success
 function changeColorToGreen() {
-  $(this).css('color', 'green');
+  $(this).css('color', '#0f0');
 }
 
 // callback for error
 function changeColorToRed() {
-  $(this).css('color', 'red');
+  $(this).css('color', '#f00');
 }
 ````
 
