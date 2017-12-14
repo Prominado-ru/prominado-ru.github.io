@@ -1,6 +1,14 @@
 ## Prominado Docs
 
-## [Prominado Guides](Guides/Common.md)
+## Гайдлайны
+* [Что это такие и зачем они нужны](Guides/Common.md)
+* [PHP](Guides/PHP.md)
+* [1С-Битрикс](Guides/Bitrix.md)
+* [HTML и CSS](Guides/Frontend.md)
+* [jQuery](Guides/jQuery.md)
+* [JavaScript](Guides/JavaScript.md)
+* [Schema.org](Guides/Schema.md)
+* [React Native](Guides/ReactNative.md)
 
 Правила оформления кода, принятые в Prominado, рекомендации и просто советы
 
