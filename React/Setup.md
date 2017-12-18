@@ -9,3 +9,13 @@
 * [watchman](https://facebook.github.io/watchman/docs/install.html) – Отслеживает измененные файлы
 
 ### Начало проекта
+
+
+### Установка библиотек
+
+После установки библиотек необходимо выполнить в папке проекта
+````bash
+watchman watch-del-all 
+rm -rf node_modules/ && npm install
+rm -rf $TMPDIR/react-*
+````

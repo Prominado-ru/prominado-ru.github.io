@@ -75,6 +75,28 @@ CJSCore::Init(['fancybox', 'bxslider']);
 ...
 ```
 
+## Динамические данные
+Если на сайте используются динамические данные (например, кнопки "Добавить в избранное / Удалить из избранного" или "Добавить в корзину / В корзине") - *не нужно* эту логику прописывать в шаблоне.
+Компонент закэшируется и корректно это работать не будет.
+
+Для данной задачи лучше использовать JS:
+
+````javascript
+function getFavorites() {
+    var get_favorite = $('[data-js-get-favorite]');
+    if (get_favorite.length) {
+        $.post('/local/ajax/favorite.php', function (data) {
+            var result = JSON.parse(data);
+            if (result.response === 'success') {
+                $.each(result.items, function (i, item) {
+                    get_favorite.find('.element[data-id=' + item + '] .element__heart').addClass('active');
+                });
+            }
+        })
+    }
+}
+````
+
 ## D7
 - Где это возможно, желательно начинать использовать `D7`
 
