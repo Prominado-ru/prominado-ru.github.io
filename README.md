@@ -17,6 +17,8 @@
 * [События на d7](Bitrix/D7-Events.md)
 * [Фильтры и гриды](Bitrix/Grid.md)
 * [ORM](Bitrix/ORM.md)
+* [Шаблон компонента Битрикс](https://github.com/Prominado-ru/bitrix-component)
+* [Шаблон модуля Битрикс](https://github.com/Prominado-ru/bitrix-module)
 
 ## React Native
 * [Установка и настройка](React/Setup.md)
@@ -29,12 +31,12 @@
 * [Работа с системой контроля версий](Git/VCS.md)
 * [Настройка Git && PhpStorm && Bitrix24](Git/Git-PhpStorm.md)
 
-## Other
+## Разное
 * [Подборка полезных статей](Other/Links.md)
 * [Подборка часто используемых плагинов](Other/Plugins.md)
 
-## Новичкам
-* [Общая информация](Other/Newcomers.md)
-
 ## Платежные системы
 * [Яндекс.Касса](Other/YandexKassa.md)
+
+## Новичкам
+* [Общая информация](Other/Newcomers.md)
