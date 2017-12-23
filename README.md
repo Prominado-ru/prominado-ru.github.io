@@ -1,5 +1,7 @@
 ## Prominado Docs
 
+Правила оформления кода, принятые в Prominado, рекомендации и просто советы
+
 ## Гайдлайны
 * [Что это такое и зачем они нужны](Guides/Common.md)
 * [PHP](Guides/PHP.md)
@@ -9,8 +11,6 @@
 * [JavaScript](Guides/JavaScript.md)
 * [Schema.org](Guides/Schema.md)
 * [React Native](Guides/ReactNative.md)
-
-Правила оформления кода, принятые в Prominado, рекомендации и просто советы
 
 ## 1С-Битрикс
 * [Консольные скрипты в Битриксе](Bitrix/CLI.md)
@@ -34,6 +34,7 @@
 ## Разное
 * [Подборка полезных статей](Other/Links.md)
 * [Подборка часто используемых плагинов](Other/Plugins.md)
+* [Хаки CSS](Other/CSSHack.md)
 
 ## Платежные системы
 * [Яндекс.Касса](Other/YandexKassa.md)
