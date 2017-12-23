@@ -80,7 +80,7 @@ if ($is_paid) {
     $client = new \YandexCheckout\Client();
     $client->setAuth($shop_id, $secret);
 
-    if($amount === '5000') {
+    if($amount === 5000) {
         $client->capturePayment([
             'amount' => $body['object']['amount']
         ], $transaction_id);
