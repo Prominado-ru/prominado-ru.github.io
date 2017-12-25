@@ -7,6 +7,7 @@
 * [Шаблоны проектирования простым языком. Часть вторая. Структурные шаблоны](https://tproger.ru/translations/design-patterns-simple-words-2)
 * [Шаблоны проектирования простым языком. Часть третья. Поведенческие шаблоны](https://tproger.ru/translations/design-patterns-simple-words-3)
 * [Чистый код на PHP](https://habrahabr.ru/company/mailru/blog/336788/)
+* [Руководство по написанию защищённых PHP-приложений в 2018-м](https://habrahabr.ru/company/mailru/blog/344696/)
 
 ## MySQL
 
@@ -37,3 +38,7 @@
 * [Обновления в ORM](https://dev.1c-bitrix.ru/community/blogs/orm/orm-updates.php) – Битрикс
 * [Делаем собственный sale.order.ajax на d7](https://dev.1c-bitrix.ru/community/webdev/user/40761/blog/25845/) – Шубин Александр
 * [Работа с гридами](../Bitrix/Grid.md) – Prominado
+
+## Разное
+* [Разница между "Делать" и "Сделать"](https://bureau.ru/bb/soviet/20160121/) – Бюро Артёма Горбунова
+* [Принцип управления проектами](https://bureau.ru/about/fff/) – Бюро Артёма Горбунова
