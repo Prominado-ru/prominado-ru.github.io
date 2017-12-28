@@ -44,3 +44,10 @@
 * Для отключение границ, следует использовать ``border: 0;`` вместо ``border: none``;
 * Закрывающаяся фигурная скобочка должна быть на новой строке
 * Между блоками правил должна быть пустая строка
+
+## Минификация svg
+Для оптимизация svg используется [svgo](https://github.com/svg/svgo/blob/master/README.ru.md)
+````bash
+npm install svgo -g
+find images -name *.svg -print0 | xargs -0 -L 1 svgo
+````

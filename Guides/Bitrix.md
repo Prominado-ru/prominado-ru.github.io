@@ -7,6 +7,10 @@
 - Скрипты и стили подключаются штатными функциями `\Bitrix\Main\Page\Asset::getInstance()->add(Js/Css)`.
 
 ## Структура сайта
+Структура сайта создается **разделами**.
+Вместо `/about/contacts.php` надо создать раздел `/about/contacts/`
+
+## Служебная структура
 - /local/ajax/ - Ajax скрипты
 - /local/cron/ - Cron скрипты
 - /local/includes/ - Включаемые области
