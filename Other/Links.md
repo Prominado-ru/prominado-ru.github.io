@@ -8,6 +8,7 @@
 * [Шаблоны проектирования простым языком. Часть третья. Поведенческие шаблоны](https://tproger.ru/translations/design-patterns-simple-words-3)
 * [Чистый код на PHP](https://habrahabr.ru/company/mailru/blog/336788/)
 * [Руководство по написанию защищённых PHP-приложений в 2018-м](https://habrahabr.ru/company/mailru/blog/344696/)
+* [Шаблоны проектирования с человеческим лицом](https://habrahabr.ru/company/mailru/blog/325492/)
 
 ## MySQL
 

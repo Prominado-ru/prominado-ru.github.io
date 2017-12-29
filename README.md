@@ -35,6 +35,7 @@
 * [Подборка полезных статей](Other/Links.md)
 * [Подборка часто используемых плагинов](Other/Plugins.md)
 * [Хаки CSS](Other/CSSHack.md)
+* [Хаки JS](Other/JSHack.md)
 
 ## Платежные системы
 * [Яндекс.Касса](Other/YandexKassa.md)
