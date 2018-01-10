@@ -118,6 +118,78 @@ $ord = \Prominado\Feedback\MessagesTable::getList([
         ])->fetchAll();
 ```
 
+## ExpressionField
+Часто бывает нужно, что какое-то поле должно зависеть от других полей. Для этого предусмотрен ExpressionField
+
+```php
+public static function getMap()
+{
+    $connection = Application::getConnection();
+    $helper = $connection->getSqlHelper();
+
+    return [
+        new IntegerField('ID', [
+            'primary'      => true,
+            'autocomplete' => true,
+            'title'        => 'Идентификатор'
+        ]),
+
+        new IntegerField('PERSON_ID', [
+            'title'    => 'Пользователь',
+            'required' => true
+        ]),
+
+        new ReferenceField(
+            'PERSON',
+            '\\Bitrix\\Main\\User',
+            array('=this.PERSON_ID' => 'ref.ID')
+        ),
+
+        new ExpressionField(
+            'PERSON_FIO',
+            $helper->getConcatFunction('%s', '\' \'', '%s', '\' \'', '%s'),
+            array('PERSON.LAST_NAME', 'PERSON.NAME', 'PERSON.SECOND_NAME')
+        )
+    ];
+}
+```
+
+В этом примере, зная идентификатор пользователя мы в поле ``PERSON_FIO`` сможем вывести его фамилию, имя и отчество.
+По этому полю доступна фильтрация и сортировка.
+
+```php
+public static function getMap()
+{
+    $connection = Application::getConnection();
+    $helper = $connection->getSqlHelper();
+
+    return [
+        new IntegerField('ID', [
+            'primary'      => true,
+            'autocomplete' => true,
+            'title'        => 'Идентификатор'
+        ]),
+
+        new StringField('ACCOUNT_NUMBER', [
+            'required' => true,
+            'title'    => 'Номер счета',
+        ]),
+
+        new StringField('PAYER_ACCOUNT', [
+            'title' => 'Расчетный счет плательщика'
+        ]),
+
+        new ExpressionField(
+            'IS_SPEND', 
+            '(%s = %s)', 
+            ['ACCOUNT_NUMBER', 'PAYER_ACCOUNT']
+        )
+    ];
+}
+```
+В этом примере, мы проверяем номер счета владельца и номер счета плательщика, если они совпадают, то ``IS_SPEND`` будет ``true``.
+По этому полю также доступна фильтрация и сортировка.
+
 ## События
 Для каждой нашей сущности доступы [все 9 событий](D7-Events.md)
 
