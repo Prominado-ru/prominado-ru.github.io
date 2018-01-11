@@ -17,6 +17,7 @@
 * [События на d7](Bitrix/D7-Events.md)
 * [Фильтры и гриды](Bitrix/Grid.md)
 * [ORM](Bitrix/ORM.md)
+* [Загрузка файлов](Bitrix/FileInput.md)
 * [Шаблон компонента Битрикс](https://github.com/Prominado-ru/bitrix-component)
 * [Шаблон модуля Битрикс](https://github.com/Prominado-ru/bitrix-module)
 

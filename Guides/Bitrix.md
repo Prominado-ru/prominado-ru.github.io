@@ -28,7 +28,13 @@
 CJSCore::Init(['fancybox', 'bxslider']);
 ```  
 
-Список предустановленных библиотек: <Дописать>
+Список предустановленных библиотек: 
+* ``fancybox`` – [fancyBox3](https://fancyapps.com/fancybox/3/)
+* ``bxslider`` – [bxSlider](https://bxslider.com/)
+* ``bulma`` – [bulma](https://bulma.io/)
+* ``owl`` – [Owl Carousel 2](https://owlcarousel2.github.io/OwlCarousel2/)
+* ``inputmask`` – [Masked Input Plugin for jQuery](http://digitalbush.com/projects/masked-input-plugin/)
+* ``styler`` – [jQuery Form Styler](http://dimox.name/jquery-form-styler/)
 
 Остальные библиотеки и фреймворки располагаются ``/local/libs/`` в каталогах, названия которых совпадают с названием библиотеки, при этом сохраняется внутренняя структура дистрибутива.
 
