@@ -1,7 +1,7 @@
 # Prominado Guides: 1С-Битрикс
 
 ## Общие рекомендации
-- К проекту в phpStorm подключать библиотеку Битрикса (PhpStorm -> Preferences -> Languages & Frameworks -> PHP) и в Include path добавить папку, скачанную [отсюда](https://github.com/matiaspub/bxApiDocs) (Репозиторий обновляется редко, скоро сделаю свой)
+- К проекту в phpStorm подключать библиотеку Битрикса (PhpStorm -> Preferences -> Languages & Frameworks -> PHP) и в Include path добавить папку, скачанную [отсюда](https://github.com/Prominado-ru/bxApiDocs)
 - Стараться избегать PHP кода на страницах и оборачивать его в самописный компонент ([пример](https://github.com/Prominado-ru/bitrix-component/))
 - `init.php` – там ничего не пишем. В `/local/php_interface/` создаются файлы `functions.php`, `events.php`, `constants.php`, в init же только подключение этих файлов. Надо помнить, что если разместить события в `/local/php_interface/events.php`, то события будут работать только для сайта, которому принадлежит папка `/local/`, для остальных сайтов `/local/` - своя
 - Скрипты и стили подключаются штатными функциями `\Bitrix\Main\Page\Asset::getInstance()->add(Js/Css)`.
