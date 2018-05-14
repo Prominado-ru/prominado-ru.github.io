@@ -5,7 +5,7 @@
 * Стандарт - HTML5: ``<!DOCTYPE html>``
 * Валидный HTML - используем сервис W3C HTML Validator (а также не забываем правильно настроить PhpStorm)
 * Использование inline стилей и обработчиков событий НЕДОПУСТИМО, от слова совсем
-* Избегайте использования блоков <style> и <script>, подключайте внешние скрипты и стили, даже если там «одна маленькая функция»
+* Избегайте использования блоков ``<style>`` и ``<script>``, подключайте внешние скрипты и стили, даже если там «одна маленькая функция»
 * Не используйте ``&mdash;``, ``&quot;`` и т.д. в тексте
 
 ### Правила форматирования
@@ -14,6 +14,101 @@
 * Теги и атрибуты должны быть строчными (lowercase)
 * Значение атрибутов должны заключаться в двойные кавычки: ``<img src="/img.jpg" alt="image alt">``
 * Порядок атрибутов должен быть единообразным
+
+### Сборка страницы
+* Если какие-то элементы имеют разные состояния в зависимости от условий, реализовывать это необходимо _модификаторами_ элементов или их родителя.
+````html
+<!-- bad -->
+<style>
+    .catalog__item {
+        width: 20%;
+    }
+    .main-page .catalog__item {
+        width: 25%;
+    }
+</style>
+<div class="page main-page">
+    <header />
+    <breadcrumbs />
+    <something_else />
+    <div class="catalog">
+        <div class="catalog__item"></div>
+        <div class="catalog__item"></div>
+        <div class="catalog__item"></div>
+    </div>
+    <footer />
+</div>
+
+<!-- normal -->
+<style>
+    .catalog__item {
+        width: 20%;
+    }
+    .has-large-items .catalog__item {
+        width: 25%;
+    }
+</style>
+<div class="page">
+    <header />
+    <breadcrumbs />
+    <something_else />
+    <div class="catalog has-large-items">
+        <div class="catalog__item"></div>
+        <div class="catalog__item"></div>
+        <div class="catalog__item"></div>
+    </div>
+    <footer />
+</div>
+
+<!-- good -->
+<style>
+    .catalog__item {
+        width: 20%;
+    }
+    .catalog__item.is-large {
+        width: 25%;
+    }
+</style>
+<div class="page">
+    <header />
+    <breadcrumbs />
+    <something_else />
+    <div class="catalog">
+        <div class="catalog__item is-large"></div>
+        <div class="catalog__item is-large"></div>
+        <div class="catalog__item is-large"></div>
+    </div>
+    <footer />
+</div>
+
+````
+
+### Переключатели
+Если необходимо сделать переключатель (выбор пола пользователя, выбор службы доставки итд) - не нужно извращаться с ``javascript``.
+Используйте обычные ``radio`` и ``checkbox`` переключатели.
+````html
+<style>
+    .gender__item input[type=radio] {
+        display: none;
+    }
+    .gender__item input[type=radio] + .gender__name {
+        // обычное состояние
+    }
+    .gender__item input[type=radio]:checked + .gender__name {
+        // выбранное состояние
+    }
+</style>
+<div class="gender">
+    <label for="gender_m" class="gender__item">
+        <input type="radio" name="gender" value="m" id="gender_m" />
+        <span class="gender__name">Мужской</span>
+    </label>
+    <label for="gender_f" class="gender__item">
+        <input type="radio" name="gender" value="f" id="gender_f" />
+        <span class="gender__name">Женский</span>
+    </label>
+</div>
+````
 
 ## CSS
 ### Общие правила
@@ -51,3 +146,7 @@
 npm install svgo -g
 find images -name *.svg -print0 | xargs -0 -L 1 svgo
 ````
+
+## Плагины
+Если какую-то задачу решает уже готовый проверенный веками плагин, пожалуйста, используйте его, не нужно велосипеды изобретать.
+[Список часто используемых плагинов](../Other/Plugins.md)
