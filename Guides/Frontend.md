@@ -131,17 +131,20 @@
 * У тэгов стили **не указываются**
 ````css
 /* bad */
-input, select {
+input, 
+select {
      
 }
 
 /* normal */
-.form input, .form select {
+.form input, 
+.form select {
      
 }
 
 /* good */
-.input, .select {
+.input,
+.select {
      
 }
 
