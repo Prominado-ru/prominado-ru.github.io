@@ -3,7 +3,42 @@
 ## Общие рекомендации
 - К проекту в phpStorm подключать библиотеку Битрикса (PhpStorm -> Preferences -> Languages & Frameworks -> PHP) и в Include path добавить папку, скачанную [отсюда](https://github.com/Prominado-ru/bxApiDocs)
 - Стараться избегать PHP кода на страницах и оборачивать его в самописный компонент ([пример](https://github.com/Prominado-ru/bitrix-component/))
-- `init.php` – там ничего не пишем. В `/local/php_interface/` создаются файлы `functions.php`, `events.php`, `constants.php`, в init же только подключение этих файлов. Надо помнить, что если разместить события в `/local/php_interface/events.php`, то события будут работать только для сайта, которому принадлежит папка `/local/`, для остальных сайтов `/local/` - своя
+- `init.php` – там ничего не пишем. В `/local/php_interface/` создаем папку `src`, в которой размещаем классы, подключаемые по стандарту PSR-4 с помощью `composer`.
+``composer.json``
+````json
+{
+    "name": "prominado/project_name",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Prominado",
+            "email": "info@prominado.ru"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"App\\": "local/php_interface/src/"}
+    }
+}
+````
+
+````php
+<?php
+// local/php_interface/init.php
+require_once __DIR__ . '/../../vendor/autoload.php';
+````
+
+````php
+<?php
+// local/php_interface/src/Settings.php
+namespace App;
+
+class Settings
+{
+    
+}
+````
+
 - Скрипты и стили подключаются штатными функциями `\Bitrix\Main\Page\Asset::getInstance()->add(Js/Css)`.
 
 ## Структура сайта
@@ -11,9 +46,9 @@
 Вместо `/about/contacts.php` надо создать раздел `/about/contacts/`
 
 ## Служебная структура
-- /local/ajax/ - Ajax скрипты
-- /local/cron/ - Cron скрипты
-- /local/includes/ - Включаемые области
+- ``/local/ajax/`` - Ajax скрипты
+- ``/local/cron/`` - Cron скрипты
+- ``/local/includes/`` - Включаемые области
 
 В корне проекта **только** проект, ````bitrix````, ````vendor```` (если используется Composer), ````local```` и ````upload````
 
@@ -123,7 +158,7 @@ if(CSite::InDir('/support/') || CSite::InDir('/some/')) {
 
 лучше вынести проверку в отдельный класс и в шаблоне проверять с помощью него:
 ````php
-if(Settings\Page::hasTwoColumns()) {
+if(App\Settings\Page::hasTwoColumns()) {
 
 }
 ````
@@ -131,8 +166,9 @@ if(Settings\Page::hasTwoColumns()) {
 ## Композер
 Если к проекту подключается - [Composer](getcomposer.org), то он инициируется в корне проекта, а в ````init.php```` прописываем
 ````php
-<?
-require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+<?php
+
+require_once __DIR__ . '/../../vendor/autoload.php';
 ````
 
 ## Версионный контроль
