@@ -1,44 +1,41 @@
-# Prominado Guides: Битрикс24
 
-## Директории для кастомизации
-3 основных директории для работы с порталом:
-/portal - директория для размещения всех кастомных страниц
-/bitrix/php_interface/src - директория для размещения библиотек (и всего, что не имеет отношения к внешнему виду)
-/bitrix/templates/bitrix24/custom - директория для размещения кастомных файлов шаблона
+# Prominado Guides: Порталы Битрикс24
 
-## Структура кастомных страниц
-Все кастомные страницы должны лежать в директории "/portal".
-1. Если необходимо создать страницу не имеющую отношения к коробочному функционалу (например: страницу отчетов), то можно создать произвольную структуру директорий (например: /portal/reports) и разместить ее там.
-2. Если необходимо создать страницу имеющую отношение к коробочному функционалу (например: список счетов с привязкой к заказам), то следует разместить ее по пути: "/portal/crm/invoice/byorders"
-3. Если необходимо добавить включаемую область для коробочной страницы (например: /crm/invoice/edit), необходимо разместить файл включаемой области по пути "/portal/crm/invoice/edit/viewcontent_%название_области%.php"
-Если необходимо расширить функционал, не имеющий отношения к внешнему виду (например: добавить набор функций для работы со счетами), следует создать библиотеку, разместить ее тут: /bitrix/php_interface/src/invoice.php и подключить через composer по стандарту psr-4.
+## Основные рабочие директории
+ - /inside - тут размещаются все кастомные страницы
+ - /local/assets - директория для размещения кастомных js и css файлов шаблона
+ - /local/cron - cron скрипты
+ - /local/ajax - ajax обработчики
+ - /local/include - включаемые области
+ - /local/php_interface/src - хранилище библиотек
 
-## Структура шаблона
-Изменять шаблон bitrix24 стоит только в исключительных и крайних случаях, т.к. при обнолвении все изменеия будут утрачены. Содержимое следует изменять с помощью JS, а добавлять с помощью включаемях областей (в шаблоне их достаточное количество) или так же с помощью JS.
-1. Для подключения сторонних файлов JS/CSS следует создать файл /bitrix/templates/bitrix24/custom/assets.php и подключить его в init.php
-```
-if(!CSite::InDir('/bitrix/')){
-	function assetsInit(){
-	    global $APPLICATION;
-	    define('ASSETS_PATH', '/bitrix/templates/bitrix24/custom');
-	    include_once($_SERVER['DOCUMENT_ROOT'].ASSETS_PATH.'/assets.php');
-	}
-	AddEventHandler("main", "OnPageStart", "assetsInit");
-}
-```
-2. Размещать кастомные файлы шаблона следует в соответствующих директориях внутри /bitrix/templates/bitrix24/custom/
-```
-|bitrix24
-|-_custom
-| |-css
-| | |-styles.css
-| | |...
-| |-js
-| | |-scripts.js
-| | |...
-| |assets.php
-| |...
-|-components
-|-images
-|...
-```
+## Кастомизация
+Все работа должна происходить в директориях описанных выше. Крайне не желательно изменять файлы самого bitrix т.к. при обновлении все изменения будут утеряны!!!
+
+**Подготовка**
+
+ 1. Создаем рабочие директории из списка выше
+ 2. Копируем `/bitrix/php_interface/init.php` в `/local/php_interface/init.php`
+ 3. [Подключаем библиотеки по стандарту PSR-4 с помощью composer](https://github.com/iTeeLion/docs/blob/master/Guides/Bitrix.md)
+
+**Шаблон**
+Для подключения кастомных js и css файлов используется директория /local/assets включим ее содержимое в шаблон.
+
+Создаем новый файл `/local/php_interface/bx_events.php` и добавляем  `include_once('bx_events.php')` в конец init.php
+
+Добавим в начало файла `/local/php_interface/bx_events.php` строки:
+
+    AddEventHandler("main", "OnProlog", "OnPrologHandler");  
+    function OnPrologHandler() {
+	    include_once($_SERVER['DOCUMENT_ROOT'] . '/local/assets/init.php');
+    }
+
+Создадим файл `/local/assets/init.php` и добавим в него строки:
+
+    global $APPLICATION;  
+    // Include custom css files
+    $APPLICATION->SetAdditionalCSS('/local/assets/css/custom.css', true);  
+    // Include custom js files
+    $APPLICATION->AddHeadScript('/local/assets/js/custom.js', true);
+
+Для кастомизации стандартных компонентов следует использовать JS и CSS, а для добавления своих отдельные страницы или включаемые области.
