@@ -19,6 +19,7 @@
  3. [Подключаем библиотеки по стандарту PSR-4 с помощью composer](https://github.com/iTeeLion/docs/blob/master/Guides/Bitrix.md)
 
 **Шаблон**
+
 Для подключения кастомных js и css файлов используется директория /local/assets включим ее содержимое в шаблон.
 
 Создаем новый файл `/local/php_interface/bx_events.php` и добавляем  `include_once('bx_events.php')` в конец init.php
