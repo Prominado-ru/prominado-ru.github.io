@@ -1,4 +1,5 @@
 module.exports = {
+  base: '/docs/',
   title: 'Документация Prominado',
   description: 'Правила оформления кода, принятые в Prominado, рекомендации и просто советы',
   themeConfig: {
