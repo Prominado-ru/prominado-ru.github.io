@@ -1,4 +1,4 @@
-# Prominado Guides: PHP
+# PHP
 
 В качестве стандартов оформления PHP-кода приняты стандарты от [PHP Framework Interop Group](http://www.php-fig.org/):
 

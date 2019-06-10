@@ -1,4 +1,4 @@
-# Prominado Guides: Schema.org
+# Schema.org
 
 При разработке используем наиболее популярную микроразметку
 

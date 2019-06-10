@@ -1,7 +1,7 @@
-# Prominado Guides: 1С-Битрикс
+# 1С-Битрикс
 
 ## Общие рекомендации
-- К проекту в phpStorm подключать библиотеку Битрикса (PhpStorm -> Preferences -> Languages & Frameworks -> PHP) и в Include path добавить папку, скачанную [отсюда](https://github.com/Prominado-ru/bxApiDocs)
+- К проекту в PhpStorm подключать библиотеку Битрикса (PhpStorm -> Preferences -> Languages & Frameworks -> PHP) и в Include path добавить папку, скачанную [отсюда](https://github.com/Prominado-ru/bxApiDocs)
 - Стараться избегать PHP кода на страницах и оборачивать его в самописный компонент ([пример](https://github.com/Prominado-ru/bitrix-component/))
 - `init.php` – там ничего не пишем. В `/local/php_interface/` создаем папку `src`, в которой размещаем классы, подключаемые по стандарту PSR-4 с помощью `composer`.
 ``composer.json``
@@ -143,7 +143,7 @@ function getFavorites() {
 ````
 
 ## D7
-- Где это возможно, желательно начинать использовать `D7`
+- Где это возможно, желательно начинать использовать [D7](https://dev.1c-bitrix.ru/api_d7/)
 
 ## Вспомогательные классы
 
@@ -164,7 +164,7 @@ if(App\Settings\Page::hasTwoColumns()) {
 ````
 
 ## Композер
-Если к проекту подключается - [Composer](getcomposer.org), то он инициируется в корне проекта, а в ````init.php```` прописываем
+Если к проекту подключается - [Composer](https://getcomposer.org), то он инициируется в корне проекта, а в ````init.php```` прописываем
 ````php
 <?php
 
@@ -174,5 +174,3 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 ## Версионный контроль
 Служебная папка ````vendor```` **обязательно** добавляются в ````.gitignore````
 При использовании composer в git должны быть ````composer.lock```` и ````composer.json````
-
-## [Статьи](../Other/Links.md#Битрикс)

@@ -1,6 +1,6 @@
 # PHP Хаки
 
-В init.php нельзя пользоваться CMain::ShowViewContent(), но можно использовать такую функцию-обертку над AddViewContent():
+В init.php нельзя пользоваться `CMain::ShowViewContent()`, но можно использовать такую функцию-обертку над `AddViewContent()`:
 
 ````
 function AddViewContentFromFile($spot, $file, $pos){

@@ -1,4 +1,4 @@
-# Prominado Guides: jQuery
+# jQuery
 
 ## Именование переменных
 
