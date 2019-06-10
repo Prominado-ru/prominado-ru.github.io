@@ -1,5 +1,7 @@
 # Настройка PhpStorm
 
+>Для начала необходимо скачать PhpStorm [отсюда](https://www.jetbrains.com/phpstorm/)
+
 ## Keymap
 
 Первым делом настраиваем ``Keymap`` (````⌘ + ,```` ````Keymap````) под себя:
