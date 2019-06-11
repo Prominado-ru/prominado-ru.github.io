@@ -1,4 +1,4 @@
-## React Native Библиотеки
+# Библиотеки
 
 * [Expo SDK](https://docs.expo.io/versions/latest/sdk/) - Много разных кроссплатформенных полезностей
 * [react-native-datepicker](https://github.com/xgfe/react-native-datepicker) – Datepicker (iOS / Android)

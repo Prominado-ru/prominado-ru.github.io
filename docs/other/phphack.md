@@ -2,7 +2,9 @@
 
 В init.php нельзя пользоваться `CMain::ShowViewContent()`, но можно использовать такую функцию-обертку над `AddViewContent()`:
 
-````
+````php
+<?php
+
 function AddViewContentFromFile($spot, $file, $pos){
     global $APPLICATION;
     ob_start();

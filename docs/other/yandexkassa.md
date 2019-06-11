@@ -16,7 +16,8 @@ composer require yandex-money/yandex-checkout-sdk-php
 В данном примере используется также передача данных о товарах для соблюдения 54-ФЗ.
 
 ````php
-<?
+<?php
+
 $client = new \YandexCheckout\Client();
 $client->setAuth($shop_id, $secret);
 $yandex = $client->createPayment([
@@ -68,7 +69,7 @@ $data = $yandex->getConfirmation()->jsonSerialize();
 На стороне сайте необходимо проверить правильность данных (если счет выставлен на 5000, а от Яндекса пришел ответ, что пытаются оплатить 500 рублей – отклюняем транзакцию)
 
 ````php
-<?
+<?php
 
 $body = json_decode(file_get_contents('php://input'), true);
 
@@ -93,7 +94,8 @@ if ($is_paid) {
 ## Возврат платежа
 
 ````php
-<?
+<?php
+
 $client = new \YandexCheckout\Client();
 $client->setAuth($shop_id, $secret);
 $yandex = $client->createRefund([

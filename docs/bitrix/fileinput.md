@@ -3,6 +3,8 @@
 Если нужна drag'n'drop загрузка файлов, в 1С-Битрикс для этого есть готовый класс:
 
 ````php
+<?php
+
 /**
  * @param upload boolean Разрешить загрузку файлов
  * @param medialib boolean

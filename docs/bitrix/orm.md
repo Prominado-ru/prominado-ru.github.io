@@ -1,5 +1,9 @@
 # Битрикс-ORM
 
+::: danger Предупреждение
+Руководство описывает старую версию ORM. Описание нового ORM можно посмотреть в [Документации 1С-Битрикс](https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=43&CHAPTER_ID=05748&LESSON_PATH=3913.5062.5748)
+:::
+
 ## Что это такое
 
 >ORM (англ. Object-relational mapping, рус. Объектно-реляционное отображение) - технология программирования, которая связывает базы данных с концепциями объектно-ориентированных языков программирования, создавая «виртуальную объектную базу данных». (Wikipedia)
@@ -19,6 +23,7 @@
 С содержимым:
  
 ```php
+<?php
 
 // Нэймспейс - обязательно код модуля. prominado.feedback = Prominado\Feedback
 namespace Prominado\Feedback;
@@ -84,6 +89,8 @@ class MessagesTable extends Main\Entity\DataManager
 ## Как использовать
 
 ```php
+<?php
+
 $res = \Prominado\Feedback\MessagesTable::add([
     'USER_ID' => 1,
     'MESSAGE' => 'Мое первое сообщение'
@@ -102,20 +109,20 @@ if ($res->isSuccess()) {
 
 // выборка
 $ord = \Prominado\Feedback\MessagesTable::getList(['filter' => [
-            '>=TIMESTAMP_X' => DateTime::createFromUserTime('d.m.Y 10:00:00'),
-            'USER_ID' => 1
-        ]])->fetchAll();
+    '>=TIMESTAMP_X' => DateTime::createFromUserTime('d.m.Y 10:00:00'),
+    'USER_ID' => 1
+]])->fetchAll();
 
 // Но нам мало получить ID пользователя. Мы еще хотим его имя и электронную почту
 $ord = \Prominado\Feedback\MessagesTable::getList([
-            'filter' => [
-                '>=TIMESTAMP_X' => DateTime::createFromUserTime('d.m.Y 10:00:00'),
-                "USER_ID" => 1
-            ],
-            // Помните ReferenceField? Вот это оно
-            // Мы запрашиваем поля NAME и EMAIL из Сущности \Bitrix\Main\User у которой ID равен нашему USER_ID
-            'select' => ['USER.NAME', 'USER.EMAIL']
-        ])->fetchAll();
+    'filter' => [
+        '>=TIMESTAMP_X' => DateTime::createFromUserTime('d.m.Y 10:00:00'),
+        "USER_ID" => 1
+    ],
+    // Помните ReferenceField? Вот это оно
+    // Мы запрашиваем поля NAME и EMAIL из Сущности \Bitrix\Main\User у которой ID равен нашему USER_ID
+    'select' => ['USER.NAME', 'USER.EMAIL']
+])->fetchAll();
 ```
 
 ## ExpressionField
@@ -125,6 +132,8 @@ $ord = \Prominado\Feedback\MessagesTable::getList([
 По этому полю доступна фильтрация и сортировка.
 
 ```php
+<?php
+
 public static function getMap()
 {
     $connection = Application::getConnection();
@@ -161,6 +170,8 @@ public static function getMap()
 По этому полю также доступна фильтрация и сортировка.
 
 ```php
+<?php
+
 public static function getMap()
 {
     $connection = Application::getConnection();

@@ -9,6 +9,7 @@
 * [Чистый код на PHP](https://habrahabr.ru/company/mailru/blog/336788/)
 * [Руководство по написанию защищённых PHP-приложений в 2018-м](https://habrahabr.ru/company/mailru/blog/344696/)
 * [Шаблоны проектирования с человеческим лицом](https://habrahabr.ru/company/mailru/blog/325492/)
+* [Разработка RESTful API](https://prominado.ru/blog/razrabotka-restful-api/) – Prominado
 
 ## MySQL
 
@@ -38,7 +39,11 @@
 * [ORM](https://dev.1c-bitrix.ru/learning/course/?COURSE_ID=43&CHAPTER_ID=05748) – Битрикс
 * [Обновления в ORM](https://dev.1c-bitrix.ru/community/blogs/orm/orm-updates.php) – Битрикс
 * [Делаем собственный sale.order.ajax на d7](https://dev.1c-bitrix.ru/community/webdev/user/40761/blog/25845/) – Шубин Александр
-* [Работа с гридами](../Bitrix/Grid.md) – Prominado
+* [Работа с гридами](https://prominado.ru/blog/gridy-i-filtry-v-bitrix/) – Prominado
+* [Eloquent модели в Битриксе](https://prominado.ru/blog/eloquent-models-with-bitrix/) – Prominado
+* [Новые Ajax-запросы в 1С-Битрикс](https://prominado.ru/blog/novye-ajax-zaprosy-v-bitrix/) – Prominado
+* [Битрикс Сайты 24](https://prominado.ru/blog/bitrix-sites-24/) – Prominado
+* [Битрикс JS](https://prominado.ru/blog/bitriks-js/) – Prominado
 
 ## Разное
 * [Разница между "Делать" и "Сделать"](https://bureau.ru/bb/soviet/20160121/) – Бюро Артёма Горбунова

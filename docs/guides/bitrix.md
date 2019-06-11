@@ -150,6 +150,8 @@ function getFavorites() {
 если встречается много условий, например, для определения будет ли выводиться вторая колонка на странице, то вместо того, чтобы прописывать все условия в ``header.php | footer.php``:
 
 ````php
+<?php
+
 if(CSite::InDir('/support/') || CSite::InDir('/some/')) {
     
 }
@@ -158,6 +160,8 @@ if(CSite::InDir('/support/') || CSite::InDir('/some/')) {
 
 лучше вынести проверку в отдельный класс и в шаблоне проверять с помощью него:
 ````php
+<?php
+
 if(App\Settings\Page::hasTwoColumns()) {
 
 }

@@ -29,6 +29,8 @@ OnAfterDelete (primary)
 Пример события для сущности `\Bitrix\Iblock\ElementTable` 
 
 ```php
+<?php
+
 \Bitrix\Main\EventManager::getInstance()->addEventHandler(
     'iblock',
     '\\Bitrix\\Iblock\\Element::OnBeforeAdd',

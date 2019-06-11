@@ -33,6 +33,8 @@ function OnPrologHandler() {
 
 Создадим файл `/local/assets/init.php` и добавим в него строки:
 ```php
+<?php
+
  global $APPLICATION;
 
 // Include custom css files
