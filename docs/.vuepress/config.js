@@ -19,9 +19,9 @@ module.exports = {
       {
         title: 'Новичкам',
         children: [
-          '/newcommers/',
-          '/newcommers/setup',
-          '/newcommers/connection',
+          '/newcomers/',
+          '/newcomers/setup',
+          '/newcomers/connection',
         ],
       },
       {
